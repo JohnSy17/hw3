@@ -7,13 +7,14 @@
 </p>
 
 <div class="row">
-  <% if @entries_rend.nil? %>
+  <% if @entries_rend.blank? %>
     <h4>No entries for this location yet!</h4>
   <%else%>
     <% for entry in @entries_rend %>
-        <h4><%= entry["title"] %></h4>
-        <h5><%= entry["occurred_on"]%></h5>
+        <h3><%= entry["title"] %></h3>
+        <h4><%= entry["occurred_on"] %></h4>
         <p><%= entry["description"] %></p>
+        <div style="height: 10px;"></div>
     <% end %>
   <%end%>
 </div>
