@@ -1,10 +1,9 @@
-<h1><%= @entry["name"] %></h1>
+<h1><%= @place_name %></h1>
  
-<ul>
-  <% for entry in @entries %>
-    <li>
-      <%= entry["name"] %>
-      <a href="/companies/<%= company["id"] %>">Details page</a>
-    </li>
+<div class="row">
+  <% for entry in @entries_rend %>
+      <h4><%= entry["title"] %></h4>
+      <h5><%= entry["ooccurred_on"]%></h5>
+      <p><%= entry["description"] %></p>
   <% end %>
-</ul>
+</div>
