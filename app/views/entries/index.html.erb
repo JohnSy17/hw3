@@ -1,17 +1,1 @@
-<h1><%= Place.find_by("id" => params["id"])["name"] %></h1>
- 
-<div class="row">
-  <% if @entries_rend.nil? %>
-    <h4>No entries for this location yet!</h4>
-  <%else%>
-    <% for entry in @entries_rend %>
-        <h4><%= entry["title"] %></h4>
-        <h5><%= entry["occurred_on"]%></h5>
-        <p><%= entry["description"] %></p>
-    <% end %>
-  <%end%>
-</div>
-
-<p>
-  <a href="/entries/new/">New Entry</a>
-</p>
+<h1>We should not see this information</h1>

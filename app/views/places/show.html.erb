@@ -1,3 +1,23 @@
-<!-- Place details page where entries are populated>
+<!-- Show the entries for a specific place -->
 
-<h1><%= >
+<h1><%= @place_info["name"] %></h1>
+
+<p>
+  <a href="/">Back to all places</a>
+</p>
+
+<div class="row">
+  <% if @entries_rend.nil? %>
+    <h4>No entries for this location yet!</h4>
+  <%else%>
+    <% for entry in @entries_rend %>
+        <h4><%= entry["title"] %></h4>
+        <h5><%= entry["occurred_on"]%></h5>
+        <p><%= entry["description"] %></p>
+    <% end %>
+  <%end%>
+</div>
+
+<p>
+  <a href="/entries/new?place_id=<%= @place_info["id"]%>">New Entry</a>
+</p>

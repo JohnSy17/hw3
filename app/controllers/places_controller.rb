@@ -11,6 +11,7 @@ class PlacesController < ApplicationController
   def show
     # identify place based on selection then render entries
     @place_info = Place.find_by({"id" => params["id"]})
+    @entries_rend = Entry.where({"place_id" => params["id"]})
   end
 
   #Creates a new place that can be added to the list
