@@ -17,6 +17,6 @@ class EntriesController < ApplicationController
       place_id: params["place_id"]
     )
     @entry_new.save
-    redirect_to "/places/#{@place_id}"
+    redirect_to "/places/#{params["place_id"]}"
   end
 end
