@@ -10,8 +10,8 @@ class PlacesController < ApplicationController
 
   def show
     # capture information that will then re-direct to the appropriate entries page
-    @place_name = Place.find_by({"id" => params["id"]})["name"]
-    redirect_to "/entries/"
+    @place_id = params["id"]
+    redirect_to "/entries/#{@place_id}"
   end
 
   #Creates a new place that can be added to the list

@@ -1,7 +1,7 @@
 class EntriesController < ApplicationController
   def index
     # show all of the posts that are relevant to the city selected
-    @entries_rend = Entry.find_by({"place_id" => params["id"]})
+    @entries_rend = Entry.where({"place_id" => params["id"]})
   end
 
   def new
@@ -9,6 +9,13 @@ class EntriesController < ApplicationController
   end
 
   def create
-    #allow for creation of a new entry
+    @entry_new = Entry.new( 
+      title: params["title"],
+      description: params["description"],
+      occurred_on: params["occurred_on"],
+      place_id: @place_id
+    )
+    @entry_new.save
+    redirect_to "/entries/"
   end
 end

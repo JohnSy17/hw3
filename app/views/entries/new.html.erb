@@ -1,0 +1,13 @@
+<h1>New Entry for <%= Place.find_by("id" => params["id"])["name"] %></h1>
+
+<form action="/entries" method="post">
+  <p>
+    <label for="title">Post Title</label>
+    <input type="text" name="title" id="title">
+    <label for="description">Post Description</label>
+    <input type="text" name="description" id="description">
+    <label for="occurred_on">Occurred On</label>
+    <input type="date" name="occurred_on" id="occurred_on">
+  </p>
+  <button>Submit</button>
+</form>
